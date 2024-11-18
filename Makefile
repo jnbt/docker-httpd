@@ -8,7 +8,7 @@ shell: build
 	docker run --rm -it ${NAME} bash
 
 test: build
-	docker run --rm -it -p 8080:80 ${NAME}
+	docker run --rm -it -p 8080:80 -v $(PWD)/www:/usr/local/apache2/htdocs/:ro ${NAME}
 
 release:
 	git commit -av -e -m "Upgrade to httpd ${VERSION}" && \
