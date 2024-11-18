@@ -1,4 +1,4 @@
-NAME=httpd
+NAME=jnbt/httpd
 VERSION=2.4.62
 
 build:
