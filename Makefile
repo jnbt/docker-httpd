@@ -10,6 +10,10 @@ shell: build
 test: build
 	docker run --rm -it -p 8080:80 -v $(PWD)/www:/usr/local/apache2/htdocs/:ro ${NAME}
 
+push: build
+	docker image tag ${NAME} ${NAME}:${VERSION}
+	docker image push ${NAME}:${VERSION}
+
 release:
 	git commit -av -e -m "Upgrade to httpd ${VERSION}" && \
 	git tag -f ${VERSION} && \
