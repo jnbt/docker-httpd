@@ -1,5 +1,5 @@
 NAME=httpd
-VERSION=2.4
+VERSION=2.4.62
 
 build:
 	docker build -t ${NAME} .
